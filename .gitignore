@@ -57,4 +57,4 @@ build/
 docs/html
 
 # Rust library
-
+third-party/covscript-rs/target
