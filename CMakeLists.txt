@@ -17,16 +17,26 @@ endif ()
 
 set(RUST_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third-party/covscript-rs)
 set(RUST_BUILD_DIR ${RUST_SRC_DIR}/target/${RUST_TARGET_NAME})
+
+set(CBINDGEN_CFG ${CMAKE_CURRENT_SOURCE_DIR}/cbindgen.toml)
+set(CBINDGEN_DIR ${CMAKE_CURRENT_BINARY_DIR}/cbindgen)
+set(CBINDGEN_H ${CBINDGEN_DIR}/covscript_compiler.hpp)
+set(CBINDGEN_CMD cbindgen --config ${CBINDGEN_CFG} --crate compiler --output ${CBINDGEN_H})
+
 message(STATUS "[Rust]: Rust src dir: ${RUST_SRC_DIR}")
 message(STATUS "[Rust]: Rust build dir: ${RUST_BUILD_DIR}")
+message(STATUS "[Rust]: cbindgen config: ${CBINDGEN_CFG}")
+message(STATUS "[Rust]: cbindgen header: ${CBINDGEN_H}")
 
 add_custom_target(compile-rust ALL
         COMMENT "Compiling Rust module"
+        COMMAND ${CBINDGEN_CMD}
         COMMAND ${CARGO_CMD}
         WORKING_DIRECTORY ${RUST_SRC_DIR})
 set_target_properties(compile-rust PROPERTIES LOCATION ${RUST_BUILD_DIR})
-link_directories(${RUST_BUILD_DIR})
 
+link_directories(${RUST_BUILD_DIR})
+include_directories(${CBINDGEN_DIR})
 ##### C++ executable
 set(SRC main.cpp)
 
