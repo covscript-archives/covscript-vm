@@ -11,4 +11,8 @@ covscript-vm
     ```shell script
     cargo install cbindgen
     ```
+   if you are compiling for Windows, please install GNU toolchain by
+   ```shell script
+    rustup toolchain install stable-gnu
+    ```
 4. OK, just start coding.
