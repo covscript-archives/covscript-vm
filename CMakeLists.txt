@@ -34,7 +34,8 @@ else ()
 endif ()
 
 set(RUST_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third-party/covscript-rs)
-set(RUST_BUILD_DIR ${RUST_SRC_DIR}/target/${RUST_WINDOWS_TARGET_DIR}${RUST_TARGET_NAME})
+set(RUST_TARGET_DIR ${RUST_SRC_DIR}/target)
+set(RUST_BUILD_DIR ${RUST_TARGET_DIR}/${RUST_WINDOWS_TARGET_DIR}${RUST_TARGET_NAME})
 
 set(CBINDGEN_CFG ${CMAKE_CURRENT_SOURCE_DIR}/cbindgen.toml)
 set(CBINDGEN_DIR ${CMAKE_CURRENT_BINARY_DIR}/cbindgen)
@@ -51,7 +52,8 @@ add_custom_target(compile-rust ALL
         COMMAND ${CBINDGEN_CMD}
         COMMAND ${CARGO_CMD}
         WORKING_DIRECTORY ${RUST_SRC_DIR})
-set_target_properties(compile-rust PROPERTIES LOCATION ${RUST_BUILD_DIR})
+set_target_properties(compile-rust PROPERTIES LOCATION ${RUST_TARGET_DIR})
+set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${RUST_TARGET_DIR})
 
 link_directories(${RUST_BUILD_DIR})
 include_directories(${CBINDGEN_DIR})
