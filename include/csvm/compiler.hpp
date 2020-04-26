@@ -5,9 +5,9 @@
 #include <memory>
 
 namespace cs {
-    struct compile_error : public mpp::runtime_error {
+    struct compile_error : public std::runtime_error {
         explicit compile_error(const std::string &str)
-            : mpp::runtime_error(str) {
+            : std::runtime_error(str) {
         }
     };
 
