@@ -1,26 +1,22 @@
 ## return
 
 ### Operation
+Return with result.
 
 ### Format
 | return |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
 return =
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+..., value ->
+...
 ```
 
 ### Description
+Return `value` from this function.
 
 ### Run-time Exceptions
-
-### Notes
-

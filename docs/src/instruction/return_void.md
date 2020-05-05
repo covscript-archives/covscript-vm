@@ -1,26 +1,22 @@
-## if_eq
+## return_void
 
 ### Operation
+Just return.
 
 ### Format
-| if_eq |
+| return_void |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
-if_eq =
+return =
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+...->
+...
 ```
 
 ### Description
+Return from current function.
 
 ### Run-time Exceptions
-
-### Notes
-
