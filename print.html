@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li class="chapter-item expanded "><a href="runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li class="chapter-item expanded "><a href="runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_<n></a></li><li class="chapter-item expanded "><a href="instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="instruction/if_eq.html"><strong aria-hidden="true">4.14.</strong> if_eq</a></li><li class="chapter-item expanded "><a href="instruction/if_null.html"><strong aria-hidden="true">4.15.</strong> if_null</a></li><li class="chapter-item expanded "><a href="instruction/if_true.html"><strong aria-hidden="true">4.16.</strong> if_true</a></li><li class="chapter-item expanded "><a href="instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="instruction/local_load.html"><strong aria-hidden="true">4.18.</strong> local_load</a></li><li class="chapter-item expanded "><a href="instruction/local_store.html"><strong aria-hidden="true">4.19.</strong> local_store</a></li><li class="chapter-item expanded "><a href="instruction/nop.html"><strong aria-hidden="true">4.20.</strong> nop</a></li><li class="chapter-item expanded "><a href="instruction/pop.html"><strong aria-hidden="true">4.21.</strong> pop</a></li><li class="chapter-item expanded "><a href="instruction/return.html"><strong aria-hidden="true">4.22.</strong> return</a></li><li class="chapter-item expanded "><a href="instruction/swap.html"><strong aria-hidden="true">4.23.</strong> swap</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -255,6 +255,402 @@ by the instruction. The remainder of the operand stack, represented
 by an ellipsis (...), is unaffected by the instruction's execution.</p>
 <p>Each value regardless of theirs' type are equally represented by a single entry
 on the operand stack.</p>
+<h2><a class="header" href="#array_load" id="array_load">array_load</a></h2>
+<h3><a class="header" href="#operation-1" id="operation-1">Operation</a></h3>
+<p>Load an value from an array.</p>
+<h3><a class="header" href="#format-1" id="format-1">Format</a></h3>
+<table><thead><tr><th align="center">array_load</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-1" id="forms-1">Forms</a></h3>
+<pre><code>array_load =
+</code></pre>
+<h3><a class="header" href="#operand-stack-1" id="operand-stack-1">Operand Stack</a></h3>
+<pre><code>..., array, index -&gt;
+..., value
+</code></pre>
+<h3><a class="header" href="#description-1" id="description-1">Description</a></h3>
+<p>The <code>array</code> must refer to an array. The <code>index</code> must be of
+type number. Both <code>array</code> and <code>index</code> are popped from the operand
+stack. The value in the component of the array at index
+is retrieved and pushed onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-1" id="run-time-exceptions-1">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-1" id="notes-1">Notes</a></h3>
+<h2><a class="header" href="#array_load-1" id="array_load-1">array_load</a></h2>
+<h3><a class="header" href="#operation-2" id="operation-2">Operation</a></h3>
+<p>Load an value from an array.</p>
+<h3><a class="header" href="#format-2" id="format-2">Format</a></h3>
+<table><thead><tr><th align="center">array_load</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-2" id="forms-2">Forms</a></h3>
+<pre><code>array_load =
+</code></pre>
+<h3><a class="header" href="#operand-stack-2" id="operand-stack-2">Operand Stack</a></h3>
+<pre><code>..., array, index -&gt;
+..., value
+</code></pre>
+<h3><a class="header" href="#description-2" id="description-2">Description</a></h3>
+<p>The <code>array</code> must refer to an array. The <code>index</code> must be of
+type number. Both <code>array</code> and <code>index</code> are popped from the operand
+stack. The value in the component of the array at index
+is retrieved and pushed onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-2" id="run-time-exceptions-2">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-2" id="notes-2">Notes</a></h3>
+<h2><a class="header" href="#array_store" id="array_store">array_store</a></h2>
+<h3><a class="header" href="#operation-3" id="operation-3">Operation</a></h3>
+<p>Store an value to an array.</p>
+<h3><a class="header" href="#format-3" id="format-3">Format</a></h3>
+<table><thead><tr><th align="center">array_store</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-3" id="forms-3">Forms</a></h3>
+<pre><code>array_store =
+</code></pre>
+<h3><a class="header" href="#operand-stack-3" id="operand-stack-3">Operand Stack</a></h3>
+<pre><code>..., array, index, value -&gt;
+...
+</code></pre>
+<h3><a class="header" href="#description-3" id="description-3">Description</a></h3>
+<p>The <code>array</code> must refer to an array. The <code>index</code> must be of
+type number. The <code>value</code> is of type any.
+The <code>array</code>, <code>index</code> and <code>value</code> are popped from the operand
+stack.
+The <code>value</code> is stored as the component of the <code>array</code> at <code>index</code>.</p>
+<h3><a class="header" href="#run-time-exceptions-3" id="run-time-exceptions-3">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-3" id="notes-3">Notes</a></h3>
+<h2><a class="header" href="#const8" id="const8">const8</a></h2>
+<h3><a class="header" href="#operation-4" id="operation-4">Operation</a></h3>
+<p>Push byte.</p>
+<h3><a class="header" href="#format-4" id="format-4">Format</a></h3>
+<table><thead><tr><th align="center">const8</th></tr></thead><tbody>
+<tr><td align="center">byte</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-4" id="forms-4">Forms</a></h3>
+<pre><code>const8 =
+</code></pre>
+<h3><a class="header" href="#operand-stack-4" id="operand-stack-4">Operand Stack</a></h3>
+<pre><code>... -&gt;
+..., value
+</code></pre>
+<h3><a class="header" href="#description-4" id="description-4">Description</a></h3>
+<p>The immediate <code>byte</code> is <strong>sign-extended</strong> to an <code>int</code> value.
+That <code>value</code> is pushed onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-4" id="run-time-exceptions-4">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-4" id="notes-4">Notes</a></h3>
+<h2><a class="header" href="#const8_n" id="const8_n">const8_&lt;n&gt;</a></h2>
+<h3><a class="header" href="#operation-5" id="operation-5">Operation</a></h3>
+<p>Push byte.</p>
+<h3><a class="header" href="#format-5" id="format-5">Format</a></h3>
+<table><thead><tr><th align="center">const8_&lt;n&gt;</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-5" id="forms-5">Forms</a></h3>
+<pre><code>const8_m1 =
+const8_0 =
+const8_1 =
+const8_2 =
+const8_3 =
+const8_4 =
+const8_5 =
+</code></pre>
+<h3><a class="header" href="#operand-stack-5" id="operand-stack-5">Operand Stack</a></h3>
+<pre><code>... -&gt;
+..., &lt;n&gt;
+</code></pre>
+<h3><a class="header" href="#description-5" id="description-5">Description</a></h3>
+<p>Push the <code>int</code> constant <em>&lt;n&gt;</em> (-1, 0, 1, 2, 3, 4, 5)
+onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-5" id="run-time-exceptions-5">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-5" id="notes-5">Notes</a></h3>
+<h2><a class="header" href="#const32" id="const32">const32</a></h2>
+<h3><a class="header" href="#operation-6" id="operation-6">Operation</a></h3>
+<p>Push int32.</p>
+<h3><a class="header" href="#format-6" id="format-6">Format</a></h3>
+<table><thead><tr><th align="center">const32</th></tr></thead><tbody>
+<tr><td align="center">byte1</td></tr>
+<tr><td align="center">byte2</td></tr>
+<tr><td align="center">byte3</td></tr>
+<tr><td align="center">byte4</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-6" id="forms-6">Forms</a></h3>
+<p>const32 =</p>
+<h3><a class="header" href="#operand-stack-6" id="operand-stack-6">Operand Stack</a></h3>
+<pre><code>...-&gt;
+..., value
+</code></pre>
+<h3><a class="header" href="#description-6" id="description-6">Description</a></h3>
+<p>Push the <code>value</code> (constructed by <code>byte1 &lt;&lt; 24 | byte2 &lt;&lt; 16 | byte3 &lt;&lt; 8 | byte4</code>)
+on to the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-6" id="run-time-exceptions-6">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-6" id="notes-6">Notes</a></h3>
+<h2><a class="header" href="#const_null" id="const_null">const_null</a></h2>
+<h3><a class="header" href="#operation-7" id="operation-7">Operation</a></h3>
+<p>Push null.</p>
+<h3><a class="header" href="#format-7" id="format-7">Format</a></h3>
+<table><thead><tr><th align="center">const_null</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-7" id="forms-7">Forms</a></h3>
+<p>const_null =</p>
+<h3><a class="header" href="#operand-stack-7" id="operand-stack-7">Operand Stack</a></h3>
+<pre><code>...-&gt;
+..., null
+</code></pre>
+<h3><a class="header" href="#description-7" id="description-7">Description</a></h3>
+<p>Push the <code>null</code> value onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-7" id="run-time-exceptions-7">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-7" id="notes-7">Notes</a></h3>
+<h2><a class="header" href="#const_num" id="const_num">const_num</a></h2>
+<h3><a class="header" href="#operation-8" id="operation-8">Operation</a></h3>
+<p>Push double.</p>
+<h3><a class="header" href="#format-8" id="format-8">Format</a></h3>
+<table><thead><tr><th align="center">const_num</th></tr></thead><tbody>
+<tr><td align="center">index</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-8" id="forms-8">Forms</a></h3>
+<p>const_num =</p>
+<h3><a class="header" href="#operand-stack-8" id="operand-stack-8">Operand Stack</a></h3>
+<pre><code>...-&gt;
+..., value
+</code></pre>
+<h3><a class="header" href="#description-8" id="description-8">Description</a></h3>
+<p>Push the <code>value</code> (stored in <strong>Constant Number Pool</strong> indexed by <code>index</code>)
+onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-8" id="run-time-exceptions-8">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-8" id="notes-8">Notes</a></h3>
+<h2><a class="header" href="#const_string" id="const_string">const_string</a></h2>
+<h3><a class="header" href="#operation-9" id="operation-9">Operation</a></h3>
+<p>Push string.</p>
+<h3><a class="header" href="#format-9" id="format-9">Format</a></h3>
+<table><thead><tr><th align="center">const_string</th></tr></thead><tbody>
+<tr><td align="center">index</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-9" id="forms-9">Forms</a></h3>
+<p>const_string =</p>
+<h3><a class="header" href="#operand-stack-9" id="operand-stack-9">Operand Stack</a></h3>
+<pre><code>...-&gt;
+..., value
+</code></pre>
+<h3><a class="header" href="#description-9" id="description-9">Description</a></h3>
+<p>Push the <code>value</code> (stored in <strong>Constant String Pool</strong> indexed by <code>index</code>)
+onto the operand stack.</p>
+<h3><a class="header" href="#run-time-exceptions-9" id="run-time-exceptions-9">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-9" id="notes-9">Notes</a></h3>
+<h2><a class="header" href="#dup" id="dup">dup</a></h2>
+<h3><a class="header" href="#operation-10" id="operation-10">Operation</a></h3>
+<p>Duplicate stack top.</p>
+<h3><a class="header" href="#format-10" id="format-10">Format</a></h3>
+<table><thead><tr><th align="center">dup</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-10" id="forms-10">Forms</a></h3>
+<p>dup =</p>
+<h3><a class="header" href="#operand-stack-10" id="operand-stack-10">Operand Stack</a></h3>
+<pre><code>..., value -&gt;
+..., value, value
+</code></pre>
+<h3><a class="header" href="#description-10" id="description-10">Description</a></h3>
+<p>Duplicate the stack top element.</p>
+<h3><a class="header" href="#run-time-exceptions-10" id="run-time-exceptions-10">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-10" id="notes-10">Notes</a></h3>
+<h2><a class="header" href="#field_load" id="field_load">field_load</a></h2>
+<h3><a class="header" href="#operation-11" id="operation-11">Operation</a></h3>
+<h3><a class="header" href="#format-11" id="format-11">Format</a></h3>
+<table><thead><tr><th align="center">field_load</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-11" id="forms-11">Forms</a></h3>
+<p>field_load =</p>
+<h3><a class="header" href="#operand-stack-11" id="operand-stack-11">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-11" id="description-11">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-11" id="run-time-exceptions-11">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-11" id="notes-11">Notes</a></h3>
+<h2><a class="header" href="#field_store" id="field_store">field_store</a></h2>
+<h3><a class="header" href="#operation-12" id="operation-12">Operation</a></h3>
+<h3><a class="header" href="#format-12" id="format-12">Format</a></h3>
+<table><thead><tr><th align="center">field_store</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-12" id="forms-12">Forms</a></h3>
+<p>field_store =</p>
+<h3><a class="header" href="#operand-stack-12" id="operand-stack-12">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-12" id="description-12">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-12" id="run-time-exceptions-12">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-12" id="notes-12">Notes</a></h3>
+<h2><a class="header" href="#if_eq" id="if_eq">if_eq</a></h2>
+<h3><a class="header" href="#operation-13" id="operation-13">Operation</a></h3>
+<h3><a class="header" href="#format-13" id="format-13">Format</a></h3>
+<table><thead><tr><th align="center">if_eq</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-13" id="forms-13">Forms</a></h3>
+<p>if_eq =</p>
+<h3><a class="header" href="#operand-stack-13" id="operand-stack-13">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-13" id="description-13">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-13" id="run-time-exceptions-13">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-13" id="notes-13">Notes</a></h3>
+<h2><a class="header" href="#if_null" id="if_null">if_null</a></h2>
+<h3><a class="header" href="#operation-14" id="operation-14">Operation</a></h3>
+<h3><a class="header" href="#format-14" id="format-14">Format</a></h3>
+<table><thead><tr><th align="center">if_null</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-14" id="forms-14">Forms</a></h3>
+<p>if_null =</p>
+<h3><a class="header" href="#operand-stack-14" id="operand-stack-14">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-14" id="description-14">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-14" id="run-time-exceptions-14">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-14" id="notes-14">Notes</a></h3>
+<h2><a class="header" href="#if_true" id="if_true">if_true</a></h2>
+<h3><a class="header" href="#operation-15" id="operation-15">Operation</a></h3>
+<h3><a class="header" href="#format-15" id="format-15">Format</a></h3>
+<table><thead><tr><th align="center">if_true</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-15" id="forms-15">Forms</a></h3>
+<p>if_true =</p>
+<h3><a class="header" href="#operand-stack-15" id="operand-stack-15">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-15" id="description-15">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-15" id="run-time-exceptions-15">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-15" id="notes-15">Notes</a></h3>
+<h2><a class="header" href="#jump" id="jump">jump</a></h2>
+<h3><a class="header" href="#operation-16" id="operation-16">Operation</a></h3>
+<h3><a class="header" href="#format-16" id="format-16">Format</a></h3>
+<table><thead><tr><th align="center">jump</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-16" id="forms-16">Forms</a></h3>
+<p>jump =</p>
+<h3><a class="header" href="#operand-stack-16" id="operand-stack-16">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-16" id="description-16">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-16" id="run-time-exceptions-16">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-16" id="notes-16">Notes</a></h3>
+<h2><a class="header" href="#local_load" id="local_load">local_load</a></h2>
+<h3><a class="header" href="#operation-17" id="operation-17">Operation</a></h3>
+<h3><a class="header" href="#format-17" id="format-17">Format</a></h3>
+<table><thead><tr><th align="center">local_load</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-17" id="forms-17">Forms</a></h3>
+<p>local_load =</p>
+<h3><a class="header" href="#operand-stack-17" id="operand-stack-17">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-17" id="description-17">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-17" id="run-time-exceptions-17">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-17" id="notes-17">Notes</a></h3>
+<h2><a class="header" href="#local_store" id="local_store">local_store</a></h2>
+<h3><a class="header" href="#operation-18" id="operation-18">Operation</a></h3>
+<h3><a class="header" href="#format-18" id="format-18">Format</a></h3>
+<table><thead><tr><th align="center">local_store</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-18" id="forms-18">Forms</a></h3>
+<p>local_store =</p>
+<h3><a class="header" href="#operand-stack-18" id="operand-stack-18">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-18" id="description-18">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-18" id="run-time-exceptions-18">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-18" id="notes-18">Notes</a></h3>
+<h2><a class="header" href="#nop" id="nop">nop</a></h2>
+<h3><a class="header" href="#operation-19" id="operation-19">Operation</a></h3>
+<h3><a class="header" href="#format-19" id="format-19">Format</a></h3>
+<table><thead><tr><th align="center">nop</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-19" id="forms-19">Forms</a></h3>
+<p>nop =</p>
+<h3><a class="header" href="#operand-stack-19" id="operand-stack-19">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-19" id="description-19">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-19" id="run-time-exceptions-19">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-19" id="notes-19">Notes</a></h3>
+<h2><a class="header" href="#pop" id="pop">pop</a></h2>
+<h3><a class="header" href="#operation-20" id="operation-20">Operation</a></h3>
+<h3><a class="header" href="#format-20" id="format-20">Format</a></h3>
+<table><thead><tr><th align="center">pop</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-20" id="forms-20">Forms</a></h3>
+<p>pop =</p>
+<h3><a class="header" href="#operand-stack-20" id="operand-stack-20">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-20" id="description-20">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-20" id="run-time-exceptions-20">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-20" id="notes-20">Notes</a></h3>
+<h2><a class="header" href="#return" id="return">return</a></h2>
+<h3><a class="header" href="#operation-21" id="operation-21">Operation</a></h3>
+<h3><a class="header" href="#format-21" id="format-21">Format</a></h3>
+<table><thead><tr><th align="center">return</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms-21" id="forms-21">Forms</a></h3>
+<p>return =</p>
+<h3><a class="header" href="#operand-stack-21" id="operand-stack-21">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description-21" id="description-21">Description</a></h3>
+<h3><a class="header" href="#run-time-exceptions-21" id="run-time-exceptions-21">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-21" id="notes-21">Notes</a></h3>
+<h2><a class="header" href="#swap" id="swap">swap</a></h2>
+<h3><a class="header" href="#operation-22" id="operation-22">Operation</a></h3>
+<p>Swap the stack top 2 elements.</p>
+<h3><a class="header" href="#format-22" id="format-22">Format</a></h3>
+<table><thead><tr><th align="center">swap</th></tr></thead><tbody>
+</tbody></table>
+<h3><a class="header" href="#forms-22" id="forms-22">Forms</a></h3>
+<p>swap =</p>
+<h3><a class="header" href="#operand-stack-22" id="operand-stack-22">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value2, value1
+</code></pre>
+<h3><a class="header" href="#description-22" id="description-22">Description</a></h3>
+<p>Swap the stack top 2 elements.</p>
+<h3><a class="header" href="#run-time-exceptions-22" id="run-time-exceptions-22">Run-time Exceptions</a></h3>
+<h3><a class="header" href="#notes-22" id="notes-22">Notes</a></h3>
 
                     </main>
 
