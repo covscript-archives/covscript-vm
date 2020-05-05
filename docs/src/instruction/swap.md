@@ -1,13 +1,11 @@
 ## swap
 
 ### Operation
+Swap the stack top 2 elements.
 
 ### Format
 | swap |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
 swap =
@@ -15,10 +13,11 @@ swap =
 ### Operand Stack
 ```
 ..., value1, value2 ->
-..., value3
+..., value2, value1
 ```
 
 ### Description
+Swap the stack top 2 elements.
 
 ### Run-time Exceptions
 

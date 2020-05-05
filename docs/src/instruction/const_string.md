@@ -1,15 +1,15 @@
-## const_num
+## const_string
 
 ### Operation
-Push double.
+Push string.
 
 ### Format
-| const_num |
+| const_string |
 | :----: |
 | index |
 
 ### Forms
-const_num =
+const_string =
 
 ### Operand Stack
 ```
@@ -18,7 +18,7 @@ const_num =
 ```
 
 ### Description
-Push the `value` (stored in **Constant Number Pool** indexed by `index`)
+Push the `value` (stored in **Constant String Pool** indexed by `index`)
 onto the operand stack.
 
 ### Run-time Exceptions

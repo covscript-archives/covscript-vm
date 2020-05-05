@@ -1,24 +1,23 @@
 ## const_null
 
 ### Operation
+Push null.
 
 ### Format
 | const_null |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
 const_null =
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+...->
+..., null
 ```
 
 ### Description
+Push the `null` value onto the operand stack.
 
 ### Run-time Exceptions
 

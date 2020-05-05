@@ -1,24 +1,23 @@
 ## dup
 
 ### Operation
+Duplicate stack top.
 
 ### Format
 | dup |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
 dup =
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+..., value ->
+..., value, value
 ```
 
 ### Description
+Duplicate the stack top element.
 
 ### Run-time Exceptions
 
