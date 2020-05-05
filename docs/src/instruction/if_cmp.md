@@ -26,8 +26,6 @@ if_ge =
 ```
 
 ### Description
-
-### Run-time Exceptions
 Both `lhs` and `rhs` are popped from the operand stack and compared.
 The results of the comparison are as follows:
 - `if_eq` succeeds if and only if `lhs == rhs`
@@ -49,3 +47,5 @@ contains this `if_<cmp>` instruction.
 Otherwise, if the comparison fails, execution proceeds at
 the address of the instruction following this `if_<cmp>`
 instruction.
+
+### Run-time Exceptions
