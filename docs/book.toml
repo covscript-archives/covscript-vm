@@ -1,0 +1,7 @@
+[book]
+authors = ["imkiva"]
+description = "This is the specification of CovScript VM."
+language = "en"
+multilingual = false
+src = "src"
+title = "CovScript Virtual Machine Specification"

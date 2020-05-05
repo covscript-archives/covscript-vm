@@ -55,6 +55,8 @@ build/
 
 # Doxygen generated files
 docs/html
+# mdbook generated files
+docs/book
 
 # Rust library
 third-party/covscript-rs/target
