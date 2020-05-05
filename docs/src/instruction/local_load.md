@@ -6,7 +6,8 @@ Load local variable.
 ### Format
 | local_load |
 | :----: |
-| index |
+| indexbyte1 |
+| indexbyte2 |
 
 ### Forms
 ```
@@ -20,7 +21,7 @@ local_load =
 ```
 
 ### Description
-Push local variable `index` onto the operand stack.
+Push local variable `index` (constructed by `indexbyte1 << 8 | indexbyte2`) onto the operand stack.
 
 ### Run-time Exceptions
 

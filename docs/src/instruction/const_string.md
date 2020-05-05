@@ -6,7 +6,8 @@ Push string.
 ### Format
 | const_string |
 | :----: |
-| index |
+| indexbyte1 |
+| indexbyte2 |
 
 ### Forms
 const_string =
@@ -18,7 +19,7 @@ const_string =
 ```
 
 ### Description
-Push the `value` (stored in **Constant String Pool** indexed by `index`)
+Push the `value` (stored in **Constant String Pool** indexed by `index` (constructed by `indexbyte1 << 8 | indexbyte2`))
 onto the operand stack.
 
 ### Run-time Exceptions
