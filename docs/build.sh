@@ -9,15 +9,10 @@ cd $SELF
 
 echo ":: Cleaning previous build"
 rm -rf ./"$tmp"
-mkdir -p ./"$tmp"
 
 echo ":: Building"
-if git worktree list | grep "gh-pages" &>/dev/null; then
-  echo ":: gh-pages already checked out, skipping"
-else
-  echo ":: Checking out gh-pages"
-  git worktree add "$tmp" gh-pages
-fi
+git worktree remove "$tmp" &>/dev/null || true
+git worktree add "$tmp" gh-pages
 mdbook build
 
 echo ":: Copying generated files"
