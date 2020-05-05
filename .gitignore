@@ -57,6 +57,8 @@ build/
 docs/html
 # mdbook generated files
 docs/book
+# build.sh deploy dir
+docs/tmp-git-deploy
 
 # Rust library
 third-party/covscript-rs/target
