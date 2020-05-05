@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Instruction Descriptions Format - CovScript Virtual Machine Specification</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is the specification of CovScript VM.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="../binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li class="chapter-item expanded "><a href="../runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../instruction/00-format-description.html" class="active"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">CovScript Virtual Machine Specification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#format-of-instruction-descriptions" id="format-of-instruction-descriptions">Format of Instruction Descriptions</a></h1>
+<p>CovScript Virtual Machine instructions are represented in this chapter by entries of the
+form shown below, in alphabetical order and each beginning on a new page.</p>
+<p>Here an example starts:</p>
+<hr />
+<h2><a class="header" href="#mnemonic" id="mnemonic">mnemonic</a></h2>
+<h3><a class="header" href="#operation" id="operation">Operation</a></h3>
+<p>Short description of the instruction</p>
+<h3><a class="header" href="#format" id="format">Format</a></h3>
+<table><thead><tr><th align="center">mnemonic</th></tr></thead><tbody>
+<tr><td align="center">operand1</td></tr>
+<tr><td align="center">operand2</td></tr>
+<tr><td align="center">...</td></tr>
+</tbody></table>
+<h3><a class="header" href="#forms" id="forms">Forms</a></h3>
+<p>mnemonic = opcode</p>
+<h3><a class="header" href="#operand-stack" id="operand-stack">Operand Stack</a></h3>
+<pre><code>..., value1, value2 -&gt;
+..., value3
+</code></pre>
+<h3><a class="header" href="#description" id="description">Description</a></h3>
+<p>A longer description detailing constraints on operand stack
+contents or constant pool entries, the operation performed, the type
+of the results, etc.</p>
+<h3><a class="header" href="#run-time-exceptions" id="run-time-exceptions">Run-time Exceptions</a></h3>
+<p>If any run-time exceptions can be thrown by the execution of an
+instruction, they are set off one to a line, in the order in which they
+must be thrown.
+Other than the run-time exceptions, if any, listed
+for an instruction, that instruction must not throw any run-time
+exceptions except for instances of <code>VirtualMachineError</code>.</p>
+<h3><a class="header" href="#notes" id="notes">Notes</a></h3>
+<p>Comments not strictly part of the specification of an instruction
+are set aside as notes at the end of the description.</p>
+<hr />
+<p>Here the example ends.</p>
+<h2><a class="header" href="#detailed-explanation" id="detailed-explanation">Detailed Explanation</a></h2>
+<h3><a class="header" href="#mnemonic-and-opcode" id="mnemonic-and-opcode">mnemonic and opcode</a></h3>
+<p>Each cell in the instruction format diagram represents a single <strong>8-bit byte</strong>. The
+instruction's mnemonic is its name. Its opcode is its numeric representation and is
+given in both decimal and hexadecimal forms. Only the numeric representation is
+actually present in the CovScript Virtual Machine code in a class file.</p>
+<h3><a class="header" href="#operands" id="operands">&quot;Operands&quot;</a></h3>
+<p>Keep in mind that there are &quot;operands&quot; generated at compile time and embedded
+within CovScript Virtual Machine instructions, as well as &quot;operands&quot; calculated at run
+time and supplied on the operand stack. Although they are supplied from several
+different areas, all these operands represent the same thing: values to be operated
+upon by the CovScript Virtual Machine instruction being executed.</p>
+<p>By implicitly taking many of its operands from its operand stack, rather than representing them
+explicitly in its compiled code as additional operand bytes, register numbers, etc.,
+the CovScript Virtual Machine's code stays compact.</p>
+<h3><a class="header" href="#instruction-family" id="instruction-family">Instruction Family</a></h3>
+<p>Some instructions are presented as members of a family of related instructions
+sharing a single description, format, and operand stack diagram. As such, a family
+of instructions includes several opcodes and opcode mnemonics; only the family
+mnemonic appears in the instruction format diagram, and a separate forms line
+lists all member mnemonics and opcodes.
+For example, the Forms line for the <code>const16_&lt;l&gt;</code> family of instructions,
+giving mnemonic and opcode information for the two instructions in that family
+(<code>const16_0</code> and <code>const16_1</code>), is</p>
+<pre><code>const16_0 = 9 (0x9)
+const16_1 = 10 (0xa)
+</code></pre>
+<h3><a class="header" href="#operand-stack-diagram" id="operand-stack-diagram">Operand Stack Diagram</a></h3>
+<p>In the description of the CovScript Virtual Machine instructions, the effect of an
+instruction's execution on the operand stack of the current frame is represented textually,
+with the stack growing from left to right and each value represented separately. Thus,</p>
+<pre><code>..., value1, value2 -&gt;
+..., result
+</code></pre>
+<p>shows an operation that begins by having <code>value2</code> on top of the operand stack with
+<code>value1</code> just beneath it.</p>
+<p>As a result of the execution of the instruction, <code>value1</code> and <code>value2</code> are popped
+from the operand stack and replaced by <code>result</code> value, which has been calculated
+by the instruction. The remainder of the operand stack, represented
+by an ellipsis (...), is unaffected by the instruction's execution.</p>
+<p>Each value regardless of theirs' type are equally represented by a single entry
+on the operand stack.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../instruction/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../instruction/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
