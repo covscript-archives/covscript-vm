@@ -1,24 +1,25 @@
 ## pop
 
 ### Operation
+Discard the stack top.
 
 ### Format
 | pop |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
+```
 pop =
+```
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+..., value ->
+...
 ```
 
 ### Description
+Pop and discard the stack top element.
 
 ### Run-time Exceptions
 

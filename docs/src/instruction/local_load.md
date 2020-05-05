@@ -1,24 +1,26 @@
 ## local_load
 
 ### Operation
+Load local variable.
 
 ### Format
 | local_load |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
+| index |
 
 ### Forms
+```
 local_load =
+```
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+...->
+..., value
 ```
 
 ### Description
+Push local variable `index` onto the operand stack.
 
 ### Run-time Exceptions
 

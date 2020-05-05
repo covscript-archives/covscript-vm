@@ -1,24 +1,26 @@
 ## local_store
 
 ### Operation
+Store local variable.
 
 ### Format
 | local_store |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
+| index |
 
 ### Forms
+```
 local_store =
+```
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+..., value ->
+...
 ```
 
 ### Description
+Store the `value` to local variable `index`.
 
 ### Run-time Exceptions
 

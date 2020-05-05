@@ -1,24 +1,27 @@
 ## field_load
 
 ### Operation
+Load object field.
 
 ### Format
 | field_load |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
+| index |
 
 ### Forms
+```
 field_load =
+```
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+..., object ->
+..., field
 ```
 
 ### Description
+Push the `field` of the `object` onto the operand stack.
+The `index` must be a valid **Constant Field Info Pool** index.
 
 ### Run-time Exceptions
 

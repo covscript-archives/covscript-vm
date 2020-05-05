@@ -1,26 +1,18 @@
 ## nop
 
 ### Operation
+No-operation.
 
 ### Format
 | nop |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
 
 ### Forms
-nop =
-
-### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+nop = 0 (0x0)
 ```
 
 ### Description
+Do nothing.
 
-### Run-time Exceptions
-
-### Notes
 

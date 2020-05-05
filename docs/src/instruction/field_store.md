@@ -1,24 +1,27 @@
 ## field_store
 
 ### Operation
+Store object field
 
 ### Format
 | field_store |
 | :----: |
-| operand1 |
-| operand2 |
-|   ...    |
+| index |
 
 ### Forms
+```
 field_store =
+```
 
 ### Operand Stack
 ```
-..., value1, value2 ->
-..., value3
+..., object, value ->
+...
 ```
 
 ### Description
+Store the `value` to `object` field (described by `index`).
+The `index` must be a valid **Constant Field Info Pool** index.
 
 ### Run-time Exceptions
 
