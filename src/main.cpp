@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cerrno>
 #include <fstream>
+#include <cstring>
 
 int main(int argc, const char **argv) {
     if (argc != 2) {
