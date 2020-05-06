@@ -2,8 +2,8 @@
 
 - [Preface](README.md)
 - [Binary File Format](binary_file/README.md)
-    - [File Header](binary_file/file_header.md)
-    - [Constant Pool](binary_file/constant_pool.md)
+    - [Epoch File Structure](binary_file/epoch_file_structure.md)
+    - [Constant Pools](binary_file/constant_pool.md)
 - [Runtime](runtime/README.md)
 - [Instruction](instruction/README.md)
     - [Instruction Descriptions Format](instruction/00-format-description.md)
