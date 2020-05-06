@@ -1,6 +1,6 @@
 # Format of Instruction Descriptions
 
-CovScript Virtual Machine instructions are represented in this chapter by entries of the
+Epoch Virtual Machine instructions are represented in this chapter by entries of the
 form shown below, in alphabetical order and each beginning on a new page.
 
 Here an example starts:
@@ -56,18 +56,18 @@ Here the example ends.
 Each cell in the instruction format diagram represents a single **8-bit byte**. The
 instruction's mnemonic is its name. Its opcode is its numeric representation and is
 given in both decimal and hexadecimal forms. Only the numeric representation is
-actually present in the CovScript Virtual Machine code in a class file.
+actually present in the Epoch Virtual Machine code in a class file.
 
 ### "Operands"
 Keep in mind that there are "operands" generated at compile time and embedded
-within CovScript Virtual Machine instructions, as well as "operands" calculated at run
+within Epoch Virtual Machine instructions, as well as "operands" calculated at run
 time and supplied on the operand stack. Although they are supplied from several
 different areas, all these operands represent the same thing: values to be operated
-upon by the CovScript Virtual Machine instruction being executed.
+upon by the Epoch Virtual Machine instruction being executed.
 
 By implicitly taking many of its operands from its operand stack, rather than representing them
 explicitly in its compiled code as additional operand bytes, register numbers, etc.,
-the CovScript Virtual Machine's code stays compact.
+the Epoch Virtual Machine's code stays compact.
 
 ### Instruction Family
 Some instructions are presented as members of a family of related instructions
@@ -84,7 +84,7 @@ const16_1 = 10 (0xa)
 ```
 
 ### Operand Stack Diagram
-In the description of the CovScript Virtual Machine instructions, the effect of an
+In the description of the Epoch Virtual Machine instructions, the effect of an
 instruction's execution on the operand stack of the current frame is represented textually,
 with the stack growing from left to right and each value represented separately. Thus,
 

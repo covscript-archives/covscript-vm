@@ -1,9 +1,9 @@
-# CovScript VM Specification
+# Epoch VM Specification
 
 **Version 1.0**
 
 ### License
-CovScript VM, all the source code, is released under the [the Covariant Innovation General Public License](https://covariant.cn/licenses/LICENSE-1.0).
+Epoch VM, all the source code, is released under the [the Covariant Innovation General Public License](https://covariant.cn/licenses/LICENSE-1.0).
 
 This documentation is released under
 
