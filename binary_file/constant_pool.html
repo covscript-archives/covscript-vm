@@ -180,12 +180,16 @@ constant <code>bits</code>, which is equal to</p>
 <p>In all other cases, let <code>s</code>, <code>e</code>, and <code>m</code> be three values that might be computed from <code>bits</code>:</p>
 <pre><code class="language-c">int s = ((bits &gt;&gt; 63) == 0) ? 1 : -1;
 int e = (int) ((bits &gt;&gt; 52) &amp; 0x7ffL);
-long m = (e == 0) 
-       ? (bits &amp; 0xfffffffffffffL) &lt;&lt; 1 
+long m = (e == 0)
+       ? (bits &amp; 0xfffffffffffffL) &lt;&lt; 1
        : (bits &amp; 0xfffffffffffffL) | 0x10000000000000L;
 </code></pre>
 <p>Then the floating-point value equals the <code>double</code> value of the mathematical expression
-$$s \times m \times {2}^{e-1075}$$</p>
+$$s \times m \times {2}^{e-1075}$$
+which is equivalent to the following code:</p>
+<pre><code class="language-c">double value = s * m * pow(2, e - 1075);
+</code></pre>
+<p>where the <code>pow</code> function has the type <code>(double, double) -&gt; double</code>.</p>
 </li>
 </ul>
 <h2><a class="header" href="#constant-string-pool" id="constant-string-pool">Constant String Pool</a></h2>
@@ -213,9 +217,9 @@ struct TypeInfo {
     u2 name_index;
 };
 </code></pre>
-<p>The value of the <code>name_index</code> item must be a valid index into the <code>string_pool</code> table. 
+<p>The value of the <code>name_index</code> item must be a valid index into the <code>string_pool</code> table.
 The <code>string_pool</code> entry at that index represents the field name or type name.</p>
-<p>If the name of the field of a <code>FieldInfo</code> structure begins with a '&lt;' ('\u003c'), 
+<p>If the name of the field of a <code>FieldInfo</code> structure begins with a '&lt;' ('\u003c'),
 then the name must be the special name <code>&lt;ctor&gt;</code>, representing a constructor method.
 The return type of such a method must be void.</p>
 
