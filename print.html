@@ -3,13 +3,13 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CovScript Virtual Machine Specification</title>
+        <title>Epoch Virtual Machine Specification</title>
         
         <meta name="robots" content="noindex" />
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This is the specification of CovScript VM.">
+        <meta name="description" content="This is the specification of Epoch VM.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li class="chapter-item expanded "><a href="runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="binary_file/epoch_file_structure.html"><strong aria-hidden="true">2.1.</strong> Epoch File Structure</a></li><li class="chapter-item expanded "><a href="binary_file/constant_pool.html"><strong aria-hidden="true">2.2.</strong> Constant Pools</a></li><li class="chapter-item expanded "><a href="binary_file/field.html"><strong aria-hidden="true">2.3.</strong> Field Structure</a></li></ol></li><li class="chapter-item expanded "><a href="runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -115,7 +115,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">CovScript Virtual Machine Specification</h1>
+                    <h1 class="menu-title">Epoch Virtual Machine Specification</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -149,10 +149,10 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#covscript-vm-specification" id="covscript-vm-specification">CovScript VM Specification</a></h1>
+                        <h1><a class="header" href="#epoch-vm-specification" id="epoch-vm-specification">Epoch VM Specification</a></h1>
 <p><strong>Version 1.0</strong></p>
 <h3><a class="header" href="#license" id="license">License</a></h3>
-<p>CovScript VM, all the source code, is released under the <a href="https://covariant.cn/licenses/LICENSE-1.0">the Covariant Innovation General Public License</a>.</p>
+<p>Epoch VM, all the source code, is released under the <a href="https://covariant.cn/licenses/LICENSE-1.0">the Covariant Innovation General Public License</a>.</p>
 <p>This documentation is released under</p>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="CC" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA 4.0</a>.</p>
 <h1><a class="header" href="#binary-file-format" id="binary-file-format">Binary File Format</a></h1>
@@ -163,6 +163,157 @@
 <li>Functions' binary representation</li>
 <li>Structs' binary representation</li>
 </ul>
+<h2><a class="header" href="#file-type" id="file-type">File Type</a></h2>
+<p>Epoch VM loads and executes <strong>epoch file</strong> (with the file extension <code>.epoch</code>).</p>
+<p>An epoch class file consists of a stream of 8-bit bytes. All 16-bit, 32-bit, and 64-bit
+quantities are constructed by reading in two, four, and eight consecutive 8-bit
+bytes, respectively. Multibyte data items are always stored in <strong>big-endian order</strong>,
+where the high bytes come first.</p>
+<h2><a class="header" href="#conventions" id="conventions">Conventions</a></h2>
+<p>This chapter defines its own set of data types representing class file data: The
+types <code>u1</code>, <code>u2</code>, and <code>u4</code> represent an unsigned <code>one-</code>, <code>two-</code>, or <code>four-</code>byte quantity,
+respectively.</p>
+<p>In the C++ programming language, these data types are defined as:</p>
+<pre><code class="language-cpp">using u1 = uint8_t;
+using u2 = uint16_t;
+using u4 = uint32_t;
+</code></pre>
+<p>This chapter presents the class file format using pseudo-structures written in a
+C-like structure notation. To avoid confusion with the fields of classes and class
+instances, etc., the contents of the structures describing the class file format are
+referred to as items. Successive items are stored in the class file sequentially,
+without padding or alignment.</p>
+<p>Tables, consisting of zero or more variable-sized items, are used in several class
+file structures. Although we use C-like array syntax to refer to table items, the fact
+that tables are streams of varying-sized structures means that it is not possible to
+translate a table index directly to a byte offset into the table.
+Where we refer to a data structure as an array, it consists of zero or more contiguous
+fixed-sized items and can be indexed like an array.</p>
+<h1><a class="header" href="#epoch-file-structure" id="epoch-file-structure">Epoch File Structure</a></h1>
+<p>An epoch file consists of a single <code>EpochFile</code> structure.</p>
+<pre><code class="language-c">struct EpochFile {
+    u4 magic;
+    u4 version;
+    u2 num_pool_count;
+    NumInfo num_pool[num_pool_count];
+    u2 string_pool_count;
+    StringInfo string_pool[string_pool_count];
+    u2 field_pool_count;
+    FieldInfo field_pool[field_pool_count];
+    u2 type_pool_count;
+    TypeInfo type_pool[type_pool_count];
+    u2 this_field_count;
+    Field this_field[this_field_count];
+};
+</code></pre>
+<p>The items in the <code>EpochFile</code> structure are as follows:</p>
+<h4><a class="header" href="#magic" id="magic">magic</a></h4>
+<p>The <code>magic</code> item supplies the <code>magic</code> number identifying the class file format;
+it has the value 0xCAFEBABE.</p>
+<h4><a class="header" href="#version" id="version">version</a></h4>
+<p>The value of <code>version</code> is the version number of this class file. Together, a version number determine the version of the class file format.</p>
+<h4><a class="header" href="#num_pool_count" id="num_pool_count">num_pool_count</a></h4>
+<p>The value of the <code>num_pool_count</code> item is equal to the number of entries in the <code>num_pool</code> table. 
+A <code>num_pool</code> index is considered valid if it is in the range <code>[0, num_pool_count)</code>.</p>
+<h4><a class="header" href="#num_pool" id="num_pool">num_pool</a></h4>
+<p>The <code>num_pool</code> is a table of structures representing various <strong>number constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>num_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>num_pool</code> table is indexed from <code>0</code> to <code>num_pool_count - 1</code></p>
+<h4><a class="header" href="#string_pool_count" id="string_pool_count">string_pool_count</a></h4>
+<p>The value of the <code>string_pool_count</code> item is equal to the number of entries in the <code>string_pool</code> table. 
+A <code>string_pool</code> index is considered valid if it is in the range <code>[0, string_pool_count)</code>.</p>
+<h4><a class="header" href="#string_pool" id="string_pool">string_pool</a></h4>
+<p>The <code>string_pool</code> is a table of structures representing various <strong>string constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>string_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>string_pool</code> table is indexed from <code>0</code> to <code>string_pool_count - 1</code></p>
+<h4><a class="header" href="#field_pool_count" id="field_pool_count">field_pool_count</a></h4>
+<p>The value of the <code>field_pool_count</code> item is equal to the number of entries in the <code>field_pool</code> table. 
+A <code>field_pool</code> index is considered valid if it is in the range <code>[0, field_pool_count)</code>.</p>
+<h4><a class="header" href="#field_pool" id="field_pool">field_pool</a></h4>
+<p>The <code>field_pool</code> is a table of structures representing various <strong>field constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>field_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>field_pool</code> table is indexed from <code>0</code> to <code>field_pool_count - 1</code></p>
+<h4><a class="header" href="#type_pool_count" id="type_pool_count">type_pool_count</a></h4>
+<p>The value of the <code>type_pool_count</code> item is equal to the number of entries in the <code>type_pool</code> table. 
+A <code>type_pool</code> index is considered valid if it is in the range <code>[0, type_pool_count)</code>.</p>
+<h4><a class="header" href="#type_pool" id="type_pool">type_pool</a></h4>
+<p>The <code>type_pool</code> is a table of structures representing various <strong>type constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>type_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>type_pool</code> table is indexed from <code>0</code> to <code>type_pool_count - 1</code></p>
+<h4><a class="header" href="#this_field_count" id="this_field_count">this_field_count</a></h4>
+<p>The value of the <code>this_field_count</code> item is equal to the number of entries in the <code>this_field</code> table. 
+A <code>this_field</code> index is considered valid if it is in the range <code>[0, this_field_count)</code>.</p>
+<h4><a class="header" href="#this_field" id="this_field">this_field</a></h4>
+<p>The <code>this_field</code> is a table of structures representing various field definied in this file. A <code>Field</code> can be a function or a variable. The format of <code>Field</code> structure is described later in <strong>Field Structure</strong>.</p>
+<p>The <code>this_field</code> table is indexed from <code>0</code> to <code>this_field_count - 1</code></p>
+<h1><a class="header" href="#constant-pool" id="constant-pool">Constant Pool</a></h1>
+<h2><a class="header" href="#constant-number-pool" id="constant-number-pool">Constant Number Pool</a></h2>
+<p>The <code>NumInfo</code> represent 8-byte numeric(double) constants:</p>
+<pre><code class="language-c">struct NumInfo {
+    u4 high_bytes;
+    u4 low_bytes;
+};
+</code></pre>
+<p>The items of these structures are as follows:</p>
+<h4><a class="header" href="#high_bytes-low_bytes" id="high_bytes-low_bytes">high_bytes, low_bytes</a></h4>
+<p>The <strong>unsigned</strong> <code>high_bytes</code> and <code>low_bytes</code> items of the <code>NumInfo</code>
+structure together represent the <code>double</code> value in <em><strong>IEEE 754 floating-point</strong></em> double format. The bytes of each item are stored in big-endian (high byte first) order.</p>
+<p>The value represented by the <code>NumInfo</code> structure is determined
+as follows:</p>
+<p>The <code>high_bytes</code> and <code>low_bytes</code> items are converted into the <code>long</code>
+constant <code>bits</code>, which is equal to</p>
+<pre><code class="language-c">long bits = ((long) high_bytes &lt;&lt; 32) + low_bytes;
+</code></pre>
+<p>Then:</p>
+<ul>
+<li>
+<p>If <code>bits</code> is <code>0x7ff0000000000000L</code>, the double value will be positive infinity.</p>
+</li>
+<li>
+<p>If <code>bits</code> is <code>0xfff0000000000000L</code>, the double value will be negative infinity.</p>
+</li>
+<li>
+<p>If <code>bits</code> is in the range <code>0x7ff0000000000001L</code> through <code>0x7fffffffffffffffL</code> or in the range <code>0xfff0000000000001L</code> through <code>0xffffffffffffffffL</code>, the double value will be <code>NaN</code>.</p>
+</li>
+<li>
+<p>In all other cases, let <code>s</code>, <code>e</code>, and <code>m</code> be three values that might be computed from <code>bits</code>:</p>
+<pre><code class="language-c">int s = ((bits &gt;&gt; 63) == 0) ? 1 : -1;
+int e = (int) ((bits &gt;&gt; 52) &amp; 0x7ffL);
+long m = (e == 0) 
+       ? (bits &amp; 0xfffffffffffffL) &lt;&lt; 1 
+       : (bits &amp; 0xfffffffffffffL) | 0x10000000000000L;
+</code></pre>
+<p>Then the floating-point value equals the <code>double</code> value of the mathematical expression
+$$s \times m \times {2}^{e-1075}$$</p>
+</li>
+</ul>
+<h2><a class="header" href="#constant-string-pool" id="constant-string-pool">Constant String Pool</a></h2>
+<p>The <code>StringInfo</code> structure is used to represent constant string values:</p>
+<pre><code class="language-c">struct StringInfo {
+    u2 length;
+    u1 bytes[length];
+};
+</code></pre>
+<p>The items of the <code>StringInfo</code> structure are the following:</p>
+<h4><a class="header" href="#length" id="length">length</a></h4>
+<p>The value of the length item gives the number of bytes in the bytes array
+(not the length of the resulting string). The strings in the <code>StringInfo</code>
+structure are not null-terminated.</p>
+<h4><a class="header" href="#bytes" id="bytes">bytes[]</a></h4>
+<p>The bytes array contains the bytes of the string. No byte may have the value
+<code>(u1) 0</code> or lie in the range <code>(u1) 0xf0</code> - <code>(u1) 0xff</code>.</p>
+<h2><a class="header" href="#constant-field-info-pool-and-constant-type-info-pool" id="constant-field-info-pool-and-constant-type-info-pool">Constant Field Info Pool and Constant Type Info Pool</a></h2>
+<p>Fields and Types are represented by similar structures:</p>
+<pre><code class="language-c">struct FieldInfo {
+    u2 name_index;
+};
+
+struct TypeInfo {
+    u2 name_index;
+};
+</code></pre>
+<p>The value of the <code>name_index</code> item must be a valid index into the <code>string_pool</code> table. 
+The <code>string_pool</code> entry at that index represents the field name or type name.</p>
+<p>If the name of the field of a <code>FieldInfo</code> structure begins with a '&lt;' ('\u003c'), 
+then the name must be the special name <code>&lt;ctor&gt;</code>, representing a constructor method.
+The return type of such a method must be void.</p>
+<h1><a class="header" href="#field-structure" id="field-structure">Field Structure</a></h1>
 <h1><a class="header" href="#runtime" id="runtime">Runtime</a></h1>
 <p>In this chapter, we will standardize:</p>
 <ul>
@@ -178,7 +329,7 @@
 <li>Ways that we handle malformed instructions</li>
 </ul>
 <h1><a class="header" href="#format-of-instruction-descriptions" id="format-of-instruction-descriptions">Format of Instruction Descriptions</a></h1>
-<p>CovScript Virtual Machine instructions are represented in this chapter by entries of the
+<p>Epoch Virtual Machine instructions are represented in this chapter by entries of the
 form shown below, in alphabetical order and each beginning on a new page.</p>
 <p>Here an example starts:</p>
 <hr />
@@ -218,16 +369,16 @@ are set aside as notes at the end of the description.</p>
 <p>Each cell in the instruction format diagram represents a single <strong>8-bit byte</strong>. The
 instruction's mnemonic is its name. Its opcode is its numeric representation and is
 given in both decimal and hexadecimal forms. Only the numeric representation is
-actually present in the CovScript Virtual Machine code in a class file.</p>
+actually present in the Epoch Virtual Machine code in a class file.</p>
 <h3><a class="header" href="#operands" id="operands">&quot;Operands&quot;</a></h3>
 <p>Keep in mind that there are &quot;operands&quot; generated at compile time and embedded
-within CovScript Virtual Machine instructions, as well as &quot;operands&quot; calculated at run
+within Epoch Virtual Machine instructions, as well as &quot;operands&quot; calculated at run
 time and supplied on the operand stack. Although they are supplied from several
 different areas, all these operands represent the same thing: values to be operated
-upon by the CovScript Virtual Machine instruction being executed.</p>
+upon by the Epoch Virtual Machine instruction being executed.</p>
 <p>By implicitly taking many of its operands from its operand stack, rather than representing them
 explicitly in its compiled code as additional operand bytes, register numbers, etc.,
-the CovScript Virtual Machine's code stays compact.</p>
+the Epoch Virtual Machine's code stays compact.</p>
 <h3><a class="header" href="#instruction-family" id="instruction-family">Instruction Family</a></h3>
 <p>Some instructions are presented as members of a family of related instructions
 sharing a single description, format, and operand stack diagram. As such, a family
@@ -241,7 +392,7 @@ giving mnemonic and opcode information for the two instructions in that family
 const16_1 = 10 (0xa)
 </code></pre>
 <h3><a class="header" href="#operand-stack-diagram" id="operand-stack-diagram">Operand Stack Diagram</a></h3>
-<p>In the description of the CovScript Virtual Machine instructions, the effect of an
+<p>In the description of the Epoch Virtual Machine instructions, the effect of an
 instruction's execution on the operand stack of the current frame is represented textually,
 with the stack growing from left to right and each value represented separately. Thus,</p>
 <pre><code>..., value1, value2 -&gt;
@@ -537,20 +688,17 @@ instruction.</p>
 <p>Invoke function.</p>
 <h3><a class="header" href="#format-14" id="format-14">Format</a></h3>
 <table><thead><tr><th align="center">invoke</th></tr></thead><tbody>
-<tr><td align="center">indexbyte1</td></tr>
-<tr><td align="center">indexbyte2</td></tr>
 </tbody></table>
 <h3><a class="header" href="#forms-14" id="forms-14">Forms</a></h3>
 <pre><code>invoke =
 </code></pre>
 <h3><a class="header" href="#operand-stack-14" id="operand-stack-14">Operand Stack</a></h3>
-<pre><code>..., [arg1, [arg2...]] -&gt;
+<pre><code>..., [arg1, [arg2...]], function -&gt;
 ..., [result]
 </code></pre>
 <h3><a class="header" href="#description-14" id="description-14">Description</a></h3>
-<p>Invoke function described by <code>index</code> (constructed by <code>indexbyte1 &lt;&lt; 8 | indexbyte2</code>) with args (<code>arg1</code> .. <code>argN</code>).</p>
+<p>Invoke <code>function</code> with args (<code>arg1</code> .. <code>argN</code>).</p>
 <p>The <code>result</code> is the function return value if and only if the function doesn't return void.</p>
-<p>The <code>index</code> must be a valid <strong>Constant Function Info Pool</strong> index.</p>
 <h3><a class="header" href="#run-time-exceptions-14" id="run-time-exceptions-14">Run-time Exceptions</a></h3>
 <h3><a class="header" href="#notes-13" id="notes-13">Notes</a></h3>
 <p>For more information about function invocation, please see

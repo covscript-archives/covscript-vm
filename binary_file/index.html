@@ -3,11 +3,11 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Binary File Format - CovScript Virtual Machine Specification</title>
+        <title>Binary File Format - Epoch Virtual Machine Specification</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This is the specification of CovScript VM.">
+        <meta name="description" content="This is the specification of Epoch VM.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="../binary_file/index.html" class="active"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li class="chapter-item expanded "><a href="../runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="../instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="../instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="../instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="../instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="../instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="../instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="../instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="../instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="../instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="../instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="../instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="../instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="../instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="../instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="../instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="../instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="../instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="../instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="../instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="../instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="../instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="../binary_file/index.html" class="active"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../binary_file/epoch_file_structure.html"><strong aria-hidden="true">2.1.</strong> Epoch File Structure</a></li><li class="chapter-item expanded "><a href="../binary_file/constant_pool.html"><strong aria-hidden="true">2.2.</strong> Constant Pools</a></li><li class="chapter-item expanded "><a href="../binary_file/field.html"><strong aria-hidden="true">2.3.</strong> Field Structure</a></li></ol></li><li class="chapter-item expanded "><a href="../runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="../instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="../instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="../instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="../instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="../instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="../instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="../instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="../instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="../instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="../instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="../instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="../instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="../instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="../instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="../instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="../instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="../instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="../instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="../instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="../instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="../instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -113,7 +113,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">CovScript Virtual Machine Specification</h1>
+                    <h1 class="menu-title">Epoch Virtual Machine Specification</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -155,6 +155,32 @@
 <li>Functions' binary representation</li>
 <li>Structs' binary representation</li>
 </ul>
+<h2><a class="header" href="#file-type" id="file-type">File Type</a></h2>
+<p>Epoch VM loads and executes <strong>epoch file</strong> (with the file extension <code>.epoch</code>).</p>
+<p>An epoch class file consists of a stream of 8-bit bytes. All 16-bit, 32-bit, and 64-bit
+quantities are constructed by reading in two, four, and eight consecutive 8-bit
+bytes, respectively. Multibyte data items are always stored in <strong>big-endian order</strong>,
+where the high bytes come first.</p>
+<h2><a class="header" href="#conventions" id="conventions">Conventions</a></h2>
+<p>This chapter defines its own set of data types representing class file data: The
+types <code>u1</code>, <code>u2</code>, and <code>u4</code> represent an unsigned <code>one-</code>, <code>two-</code>, or <code>four-</code>byte quantity,
+respectively.</p>
+<p>In the C++ programming language, these data types are defined as:</p>
+<pre><code class="language-cpp">using u1 = uint8_t;
+using u2 = uint16_t;
+using u4 = uint32_t;
+</code></pre>
+<p>This chapter presents the class file format using pseudo-structures written in a
+C-like structure notation. To avoid confusion with the fields of classes and class
+instances, etc., the contents of the structures describing the class file format are
+referred to as items. Successive items are stored in the class file sequentially,
+without padding or alignment.</p>
+<p>Tables, consisting of zero or more variable-sized items, are used in several class
+file structures. Although we use C-like array syntax to refer to table items, the fact
+that tables are streams of varying-sized structures means that it is not possible to
+translate a table index directly to a byte offset into the table.
+Where we refer to a data structure as an array, it consists of zero or more contiguous
+fixed-sized items and can be indexed like an array.</p>
 
                     </main>
 
@@ -167,7 +193,7 @@
                         
 
                         
-                            <a rel="next" href="../runtime/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../binary_file/epoch_file_structure.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -185,7 +211,7 @@
                 
 
                 
-                    <a rel="next" href="../runtime/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../binary_file/epoch_file_structure.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

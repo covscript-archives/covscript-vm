@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Epoch File Structure - Epoch Virtual Machine Specification</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="This is the specification of Epoch VM.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="../binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../binary_file/epoch_file_structure.html" class="active"><strong aria-hidden="true">2.1.</strong> Epoch File Structure</a></li><li class="chapter-item expanded "><a href="../binary_file/constant_pool.html"><strong aria-hidden="true">2.2.</strong> Constant Pools</a></li><li class="chapter-item expanded "><a href="../binary_file/field.html"><strong aria-hidden="true">2.3.</strong> Field Structure</a></li></ol></li><li class="chapter-item expanded "><a href="../runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../instruction/00-format-description.html"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="../instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="../instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="../instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="../instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="../instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="../instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="../instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="../instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="../instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="../instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="../instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="../instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="../instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="../instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="../instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="../instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="../instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="../instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="../instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="../instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="../instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Epoch Virtual Machine Specification</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#epoch-file-structure" id="epoch-file-structure">Epoch File Structure</a></h1>
+<p>An epoch file consists of a single <code>EpochFile</code> structure.</p>
+<pre><code class="language-c">struct EpochFile {
+    u4 magic;
+    u4 version;
+    u2 num_pool_count;
+    NumInfo num_pool[num_pool_count];
+    u2 string_pool_count;
+    StringInfo string_pool[string_pool_count];
+    u2 field_pool_count;
+    FieldInfo field_pool[field_pool_count];
+    u2 type_pool_count;
+    TypeInfo type_pool[type_pool_count];
+    u2 this_field_count;
+    Field this_field[this_field_count];
+};
+</code></pre>
+<p>The items in the <code>EpochFile</code> structure are as follows:</p>
+<h4><a class="header" href="#magic" id="magic">magic</a></h4>
+<p>The <code>magic</code> item supplies the <code>magic</code> number identifying the class file format;
+it has the value 0xCAFEBABE.</p>
+<h4><a class="header" href="#version" id="version">version</a></h4>
+<p>The value of <code>version</code> is the version number of this class file. Together, a version number determine the version of the class file format.</p>
+<h4><a class="header" href="#num_pool_count" id="num_pool_count">num_pool_count</a></h4>
+<p>The value of the <code>num_pool_count</code> item is equal to the number of entries in the <code>num_pool</code> table. 
+A <code>num_pool</code> index is considered valid if it is in the range <code>[0, num_pool_count)</code>.</p>
+<h4><a class="header" href="#num_pool" id="num_pool">num_pool</a></h4>
+<p>The <code>num_pool</code> is a table of structures representing various <strong>number constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>num_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>num_pool</code> table is indexed from <code>0</code> to <code>num_pool_count - 1</code></p>
+<h4><a class="header" href="#string_pool_count" id="string_pool_count">string_pool_count</a></h4>
+<p>The value of the <code>string_pool_count</code> item is equal to the number of entries in the <code>string_pool</code> table. 
+A <code>string_pool</code> index is considered valid if it is in the range <code>[0, string_pool_count)</code>.</p>
+<h4><a class="header" href="#string_pool" id="string_pool">string_pool</a></h4>
+<p>The <code>string_pool</code> is a table of structures representing various <strong>string constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>string_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>string_pool</code> table is indexed from <code>0</code> to <code>string_pool_count - 1</code></p>
+<h4><a class="header" href="#field_pool_count" id="field_pool_count">field_pool_count</a></h4>
+<p>The value of the <code>field_pool_count</code> item is equal to the number of entries in the <code>field_pool</code> table. 
+A <code>field_pool</code> index is considered valid if it is in the range <code>[0, field_pool_count)</code>.</p>
+<h4><a class="header" href="#field_pool" id="field_pool">field_pool</a></h4>
+<p>The <code>field_pool</code> is a table of structures representing various <strong>field constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>field_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>field_pool</code> table is indexed from <code>0</code> to <code>field_pool_count - 1</code></p>
+<h4><a class="header" href="#type_pool_count" id="type_pool_count">type_pool_count</a></h4>
+<p>The value of the <code>type_pool_count</code> item is equal to the number of entries in the <code>type_pool</code> table. 
+A <code>type_pool</code> index is considered valid if it is in the range <code>[0, type_pool_count)</code>.</p>
+<h4><a class="header" href="#type_pool" id="type_pool">type_pool</a></h4>
+<p>The <code>type_pool</code> is a table of structures representing various <strong>type constants</strong> that are referred to within the <code>EpochFile</code> structure and its substructures. The format of each <code>type_pool</code> table entry is described later in <strong>Constant Pools</strong>.</p>
+<p>The <code>type_pool</code> table is indexed from <code>0</code> to <code>type_pool_count - 1</code></p>
+<h4><a class="header" href="#this_field_count" id="this_field_count">this_field_count</a></h4>
+<p>The value of the <code>this_field_count</code> item is equal to the number of entries in the <code>this_field</code> table. 
+A <code>this_field</code> index is considered valid if it is in the range <code>[0, this_field_count)</code>.</p>
+<h4><a class="header" href="#this_field" id="this_field">this_field</a></h4>
+<p>The <code>this_field</code> is a table of structures representing various field definied in this file. A <code>Field</code> can be a function or a variable. The format of <code>Field</code> structure is described later in <strong>Field Structure</strong>.</p>
+<p>The <code>this_field</code> table is indexed from <code>0</code> to <code>this_field_count - 1</code></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../binary_file/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../binary_file/constant_pool.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../binary_file/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../binary_file/constant_pool.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

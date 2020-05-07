@@ -3,11 +3,11 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Instruction Descriptions Format - CovScript Virtual Machine Specification</title>
+        <title>Instruction Descriptions Format - Epoch Virtual Machine Specification</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="This is the specification of CovScript VM.">
+        <meta name="description" content="This is the specification of Epoch VM.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="../binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li class="chapter-item expanded "><a href="../runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../instruction/00-format-description.html" class="active"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="../instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="../instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="../instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="../instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="../instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="../instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="../instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="../instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="../instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="../instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="../instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="../instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="../instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="../instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="../instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="../instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="../instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="../instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="../instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="../instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="../instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Preface</a></li><li class="chapter-item expanded "><a href="../binary_file/index.html"><strong aria-hidden="true">2.</strong> Binary File Format</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../binary_file/epoch_file_structure.html"><strong aria-hidden="true">2.1.</strong> Epoch File Structure</a></li><li class="chapter-item expanded "><a href="../binary_file/constant_pool.html"><strong aria-hidden="true">2.2.</strong> Constant Pools</a></li><li class="chapter-item expanded "><a href="../binary_file/field.html"><strong aria-hidden="true">2.3.</strong> Field Structure</a></li></ol></li><li class="chapter-item expanded "><a href="../runtime/index.html"><strong aria-hidden="true">3.</strong> Runtime</a></li><li class="chapter-item expanded "><a href="../instruction/index.html"><strong aria-hidden="true">4.</strong> Instruction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../instruction/00-format-description.html" class="active"><strong aria-hidden="true">4.1.</strong> Instruction Descriptions Format</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.2.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_load.html"><strong aria-hidden="true">4.3.</strong> array_load</a></li><li class="chapter-item expanded "><a href="../instruction/array_store.html"><strong aria-hidden="true">4.4.</strong> array_store</a></li><li class="chapter-item expanded "><a href="../instruction/const8.html"><strong aria-hidden="true">4.5.</strong> const8</a></li><li class="chapter-item expanded "><a href="../instruction/const8_fast.html"><strong aria-hidden="true">4.6.</strong> const8_n</a></li><li class="chapter-item expanded "><a href="../instruction/const32.html"><strong aria-hidden="true">4.7.</strong> const32</a></li><li class="chapter-item expanded "><a href="../instruction/const_null.html"><strong aria-hidden="true">4.8.</strong> const_null</a></li><li class="chapter-item expanded "><a href="../instruction/const_num.html"><strong aria-hidden="true">4.9.</strong> const_num</a></li><li class="chapter-item expanded "><a href="../instruction/const_string.html"><strong aria-hidden="true">4.10.</strong> const_string</a></li><li class="chapter-item expanded "><a href="../instruction/dup.html"><strong aria-hidden="true">4.11.</strong> dup</a></li><li class="chapter-item expanded "><a href="../instruction/field_load.html"><strong aria-hidden="true">4.12.</strong> field_load</a></li><li class="chapter-item expanded "><a href="../instruction/field_store.html"><strong aria-hidden="true">4.13.</strong> field_store</a></li><li class="chapter-item expanded "><a href="../instruction/if_cmp.html"><strong aria-hidden="true">4.14.</strong> if_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/invoke.html"><strong aria-hidden="true">4.15.</strong> invoke</a></li><li class="chapter-item expanded "><a href="../instruction/invoke_ctor.html"><strong aria-hidden="true">4.16.</strong> invoke_ctor</a></li><li class="chapter-item expanded "><a href="../instruction/jump.html"><strong aria-hidden="true">4.17.</strong> jump</a></li><li class="chapter-item expanded "><a href="../instruction/jump_cmp.html"><strong aria-hidden="true">4.18.</strong> jump_cmp</a></li><li class="chapter-item expanded "><a href="../instruction/jump_null.html"><strong aria-hidden="true">4.19.</strong> jump_null</a></li><li class="chapter-item expanded "><a href="../instruction/local_load.html"><strong aria-hidden="true">4.20.</strong> local_load</a></li><li class="chapter-item expanded "><a href="../instruction/local_store.html"><strong aria-hidden="true">4.21.</strong> local_store</a></li><li class="chapter-item expanded "><a href="../instruction/new.html"><strong aria-hidden="true">4.22.</strong> new</a></li><li class="chapter-item expanded "><a href="../instruction/nop.html"><strong aria-hidden="true">4.23.</strong> nop</a></li><li class="chapter-item expanded "><a href="../instruction/pop.html"><strong aria-hidden="true">4.24.</strong> pop</a></li><li class="chapter-item expanded "><a href="../instruction/return.html"><strong aria-hidden="true">4.25.</strong> return</a></li><li class="chapter-item expanded "><a href="../instruction/return_void.html"><strong aria-hidden="true">4.26.</strong> return_void</a></li><li class="chapter-item expanded "><a href="../instruction/swap.html"><strong aria-hidden="true">4.27.</strong> swap</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -113,7 +113,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">CovScript Virtual Machine Specification</h1>
+                    <h1 class="menu-title">Epoch Virtual Machine Specification</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -148,7 +148,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#format-of-instruction-descriptions" id="format-of-instruction-descriptions">Format of Instruction Descriptions</a></h1>
-<p>CovScript Virtual Machine instructions are represented in this chapter by entries of the
+<p>Epoch Virtual Machine instructions are represented in this chapter by entries of the
 form shown below, in alphabetical order and each beginning on a new page.</p>
 <p>Here an example starts:</p>
 <hr />
@@ -188,16 +188,16 @@ are set aside as notes at the end of the description.</p>
 <p>Each cell in the instruction format diagram represents a single <strong>8-bit byte</strong>. The
 instruction's mnemonic is its name. Its opcode is its numeric representation and is
 given in both decimal and hexadecimal forms. Only the numeric representation is
-actually present in the CovScript Virtual Machine code in a class file.</p>
+actually present in the Epoch Virtual Machine code in a class file.</p>
 <h3><a class="header" href="#operands" id="operands">&quot;Operands&quot;</a></h3>
 <p>Keep in mind that there are &quot;operands&quot; generated at compile time and embedded
-within CovScript Virtual Machine instructions, as well as &quot;operands&quot; calculated at run
+within Epoch Virtual Machine instructions, as well as &quot;operands&quot; calculated at run
 time and supplied on the operand stack. Although they are supplied from several
 different areas, all these operands represent the same thing: values to be operated
-upon by the CovScript Virtual Machine instruction being executed.</p>
+upon by the Epoch Virtual Machine instruction being executed.</p>
 <p>By implicitly taking many of its operands from its operand stack, rather than representing them
 explicitly in its compiled code as additional operand bytes, register numbers, etc.,
-the CovScript Virtual Machine's code stays compact.</p>
+the Epoch Virtual Machine's code stays compact.</p>
 <h3><a class="header" href="#instruction-family" id="instruction-family">Instruction Family</a></h3>
 <p>Some instructions are presented as members of a family of related instructions
 sharing a single description, format, and operand stack diagram. As such, a family
@@ -211,7 +211,7 @@ giving mnemonic and opcode information for the two instructions in that family
 const16_1 = 10 (0xa)
 </code></pre>
 <h3><a class="header" href="#operand-stack-diagram" id="operand-stack-diagram">Operand Stack Diagram</a></h3>
-<p>In the description of the CovScript Virtual Machine instructions, the effect of an
+<p>In the description of the Epoch Virtual Machine instructions, the effect of an
 instruction's execution on the operand stack of the current frame is represented textually,
 with the stack growing from left to right and each value represented separately. Thus,</p>
 <pre><code>..., value1, value2 -&gt;
