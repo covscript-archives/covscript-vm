@@ -4,6 +4,7 @@
 - [Binary File Format](binary_file/README.md)
     - [Epoch File Structure](binary_file/epoch_file_structure.md)
     - [Constant Pools](binary_file/constant_pool.md)
+    - [Field Structure](binary_file/field.md)
 - [Runtime](runtime/README.md)
 - [Instruction](instruction/README.md)
     - [Instruction Descriptions Format](instruction/00-format-description.md)
