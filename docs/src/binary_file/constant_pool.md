@@ -30,7 +30,7 @@ Then:
 - If `bits` is `0x7ff0000000000000L`, the double value will be positive infinity.
 
 - If `bits` is `0xfff0000000000000L`, the double value will be negative infinity.
- 
+
 - If `bits` is in the range `0x7ff0000000000001L` through `0x7fffffffffffffffL` or in the range `0xfff0000000000001L` through `0xffffffffffffffffL`, the double value will be `NaN`.
 
 - In all other cases, let `s`, `e`, and `m` be three values that might be computed from `bits`:
@@ -38,12 +38,17 @@ Then:
     ```c
     int s = ((bits >> 63) == 0) ? 1 : -1;
     int e = (int) ((bits >> 52) & 0x7ffL);
-    long m = (e == 0) 
-           ? (bits & 0xfffffffffffffL) << 1 
+    long m = (e == 0)
+           ? (bits & 0xfffffffffffffL) << 1
            : (bits & 0xfffffffffffffL) | 0x10000000000000L;
     ```
     Then the floating-point value equals the `double` value of the mathematical expression
     $$s \times m \times {2}^{e-1075}$$
+    which is equivalent to the following code:
+    ```c
+    double value = s * m * pow(2, e - 1075);
+    ```
+    where the `pow` function has the type `(double, double) -> double`.
 
 ## Constant String Pool
 The `StringInfo` structure is used to represent constant string values:
@@ -79,9 +84,9 @@ struct TypeInfo {
 };
 ```
 
-The value of the `name_index` item must be a valid index into the `string_pool` table. 
+The value of the `name_index` item must be a valid index into the `string_pool` table.
 The `string_pool` entry at that index represents the field name or type name.
 
-If the name of the field of a `FieldInfo` structure begins with a '<' ('\u003c'), 
+If the name of the field of a `FieldInfo` structure begins with a '<' ('\u003c'),
 then the name must be the special name `<ctor>`, representing a constructor method.
 The return type of such a method must be void.
