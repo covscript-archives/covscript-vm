@@ -48,7 +48,7 @@ Then:
     ```c
     double value = s * m * pow(2, e - 1075);
     ```
-    where the `pow` function has the type `(double, double) -> double`.
+    where the `pow` is of type `(double, double) -> double`.
 
 ## Constant String Pool
 The `StringInfo` structure is used to represent constant string values:
