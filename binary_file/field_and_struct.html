@@ -178,6 +178,8 @@ The <code>string_pool</code> entry at that index represents the field name.</p>
 <h4><a class="header" href="#fieldfn" id="fieldfn">FieldFn</a></h4>
 <pre><code class="language-c">struct FieldFn {
     u2 name_index;
+    u2 argc;
+    u2 locals;
     u2 block_count;
     CodeBlock block[block_count];
 };
@@ -188,6 +190,10 @@ The <code>string_pool</code> entry at that index represents the field name.</p>
 The <code>string_pool</code> entry at that index represents the field name.</p>
 <p>Name that begins with a '&lt;' ('\u003c') is Epoch VM reserved field name.
 For detailed information about reserved name, please see <a href="../runtime/reserved_names.html">Reserved Names</a>.</p>
+<h5><a class="header" href="#argc" id="argc">argc</a></h5>
+<p>The value of the <code>argc</code> is the argument count of this function.</p>
+<h5><a class="header" href="#locals" id="locals">locals</a></h5>
+<p>The value of the <code>locals</code> is the count of used local variables in this function.</p>
 <h5><a class="header" href="#block_count" id="block_count">block_count</a></h5>
 <p>The value of the <code>block_count</code> item is equal to the number of entries in the <code>block</code> table.
 A <code>block</code> index is considered valid if it is in the range <code>[0, block_count)</code>.</p>
