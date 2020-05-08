@@ -77,7 +77,7 @@ The value of the `this_field_count` item is equal to the number of entries in th
 A `this_field` index is considered valid if it is in the range `[0, this_field_count)`.
 
 #### this_field
-The `this_field` is a table of structures representing various field definied in this file. A `Field` can be a function or a variable. The format of `Field` structure is described later in [**Field and Struct**](field_and_struct.md).
+The `this_field` is a table of structures representing various field defined in this file. A `Field` can be a function or a variable. The format of `Field` structure is described later in [**Field and Struct**](field_and_struct.md).
 
 The `this_field` table is indexed from `0` to `this_field_count - 1`
 
@@ -86,7 +86,7 @@ The value of the `this_struct_count` item is equal to the number of entries in t
 A `this_struct` index is considered valid if it is in the range `[0, this_struct_count)`.
 
 #### this_struct
-The `this_struct` is a table of structures representing various field definied in this file. The format of `Struct` structure is described later in [**Field and Struct**](field_and_struct.md).
+The `this_struct` is a table of structures representing various field defined in this file. The format of `Struct` structure is described later in [**Field and Struct**](field_and_struct.md).
 
 The `this_struct` table is indexed from `0` to `this_struct_count - 1`
 
