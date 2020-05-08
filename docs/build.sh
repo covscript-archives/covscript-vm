@@ -21,6 +21,6 @@ cp -rp book/* "$tmp"/
 echo ":: Pushing to gh-page branch"
 cd "$tmp"
 git add -A
-git commit -m "specification updated on $(date)"
+git commit -m "specification updated on $(date)" || true
 git push origin gh-pages -f
 cd -
