@@ -209,8 +209,27 @@ indicating the block that will be executed when this block ends.</p>
 <p>The <code>code</code> array gives the actual bytes of Epoch Virtual Machine code
 that implement the function.</p>
 <p>The detailed constraints on the contents of the code array are extensive and are
-given in <a href="../instruction/README.html">Instructions</a>.</p>
+given in <a href="../instruction/00-format-description.html">Instructions</a>.</p>
 <h2><a class="header" href="#struct" id="struct">Struct</a></h2>
+<p>A <code>Struct</code> structure is defined as follow:</p>
+<pre><code class="language-c">struct Struct {
+    u2 name_index;
+    u2 field_count;
+    Field field[field_count];
+};
+</code></pre>
+<p>The items of the <code>Struct</code> structure are the following:</p>
+<h3><a class="header" href="#name_index-1" id="name_index-1">name_index</a></h3>
+<p>The value of the <code>name_index</code> item must be a valid index into the <code>string_pool</code> table.
+The <code>string_pool</code> entry at that index represents the field name.</p>
+<h3><a class="header" href="#field_count" id="field_count">field_count</a></h3>
+<p>The value of the <code>field_count</code> item is equal to the number of entries in the <code>field</code> table.
+A <code>field</code> index is considered valid if it is in the range <code>[0, field_count)</code>.</p>
+<h3><a class="header" href="#field-1" id="field-1">field</a></h3>
+<p>The <code>field</code> is a table of structures representing various field defined in this struct.
+A <code>Field</code> can be a function or a variable.
+The format of <code>Field</code> structure is described in <a href="#field"><strong>Field</strong></a>.</p>
+<p>The <code>field</code> table is indexed from <code>0</code> to <code>field_count - 1</code></p>
 
                     </main>
 
