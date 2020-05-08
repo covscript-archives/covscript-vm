@@ -41,6 +41,8 @@ The `string_pool` entry at that index represents the field name.
 ```c
 struct FieldFn {
     u2 name_index;
+    u2 argc;
+    u2 locals;
     u2 block_count;
     CodeBlock block[block_count];
 };
@@ -54,6 +56,12 @@ The `string_pool` entry at that index represents the field name.
 
 Name that begins with a '<' ('\u003c') is Epoch VM reserved field name.
 For detailed information about reserved name, please see [Reserved Names](../runtime/reserved_names.md).
+
+##### argc
+The value of the `argc` is the argument count of this function.
+
+##### locals
+The value of the `locals` is the count of used local variables in this function.
 
 ##### block_count
 The value of the `block_count` item is equal to the number of entries in the `block` table.
