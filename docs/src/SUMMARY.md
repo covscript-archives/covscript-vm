@@ -30,6 +30,7 @@
     - [local_load](instruction/local_load.md)
     - [local_store](instruction/local_store.md)
     - [new](instruction/new.md)
+    - [new_dyn](instruction/new_dyn.md)
     - [nop](instruction/nop.md)
     - [pop](instruction/pop.md)
     - [return](instruction/return.md)
