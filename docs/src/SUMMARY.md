@@ -33,6 +33,7 @@
     - [new_dyn](instruction/new_dyn.md)
     - [nop](instruction/nop.md)
     - [pop](instruction/pop.md)
+    - [resolve_dyn](instruction/resolve_dyn.md)
     - [return](instruction/return.md)
     - [return_void](instruction/return_void.md)
     - [swap](instruction/swap.md)
