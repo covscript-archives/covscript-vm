@@ -52,6 +52,9 @@ The items of the `FieldFn` structure are the following:
 The value of the `name_index` item must be a valid index into the `string_pool` table.
 The `string_pool` entry at that index represents the field name.
 
+Name that begins with a '<' ('\u003c') is Epoch VM reserved field name.
+For detailed information about reserved name, please see [Reserved Names](../runtime/reserved_names.md).
+
 ##### block_count
 The value of the `block_count` item is equal to the number of entries in the `block` table.
 A `block` index is considered valid if it is in the range `[0, block_count)`.
