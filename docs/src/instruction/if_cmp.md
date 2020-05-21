@@ -6,8 +6,8 @@ Compare and jump.
 ### Format
 | if_\<cmp\> |
 | :----: |
-| branchbyte1 |
-| branchbyte1 |
+| bbbyte1 |
+| bbbyte2 |
 
 ### Forms
 ```
@@ -35,13 +35,12 @@ The results of the comparison are as follows:
 - `if_gt` succeeds if and only if `lhs > rhs`
 - `if_ge` succeeds if and only if `lhs >= rhs`
 
-If the comparison succeeds, the **unsigned** `branchbyte1` and
-`branchbyte2` are used to construct a **signed 16-bit offset**, where
-the offset is calculated to be `(branchbyte1 << 8) | branchbyte2`.
+If the comparison succeeds, the **unsigned** `bbbyte1` and
+`bbbyte2` are used to construct a **signed 16-bit BBID**, where
+the BBID is calculated to be `(bbbyte1 << 8) | bbbyte2`.
 
-Execution then proceeds at that offset from the address of the
-opcode of this `if_<cmp>` instruction. The target address
-must be that of an opcode of an instruction within the function that
+Execution then proceeds at that BB. The target BB
+must be a BasicBlock within the function that
 contains this `if_<cmp>` instruction.
 
 Otherwise, if the comparison fails, execution proceeds at
