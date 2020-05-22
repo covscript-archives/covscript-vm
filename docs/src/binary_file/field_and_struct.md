@@ -20,7 +20,7 @@ format of the additional information varies with the `tag` value (see [Field Var
 | Field type | value | length of the `info` array |
 | :--------: | :---: | :------------------------: |
 | FIELD_var  | 1     | `sizeof(FieldVar)`         |
-| FIELD_clo  | 2     | `sizeof(FieldClosure)`     |
+| FIELD_clo  | 2     | `sizeof(FieldFn)`          |
 
 
 ### Field variants
@@ -37,9 +37,9 @@ struct FieldVar {
 The value of the `name_index` item must be a valid index into the `string_pool` table.
 The `string_pool` entry at that index represents the field name.
 
-#### FieldClosure
+#### FieldFn
 ```c
-struct FieldClosure {
+struct FieldFn {
     u2 name_index;
     u2 argc;
     u2 locals;
@@ -48,7 +48,7 @@ struct FieldClosure {
 };
 ```
 
-The items of the `FieldClosure` structure are the following:
+The items of the `FieldFn` structure are the following:
 
 ##### name_index
 The value of the `name_index` item must be a valid index into the `string_pool` table.
