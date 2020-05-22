@@ -20,11 +20,11 @@ format of the additional information varies with the `tag` value (see [Field Var
 | Field type | value | length of the `info` array |
 | :--------: | :---: | :------------------------: |
 | FIELD_var  | 1     | `sizeof(FieldVar)`         |
-| FIELD_fn   | 2     | `sizeof(FieldFn)`          |
+| FIELD_clo  | 2     | `sizeof(FieldClosure)`     |
 
 
 ### Field variants
-A field can be a variable or a function. Each has a different
+A field can be a variable or a closure. Each has a different
 binary representation.
 
 #### FieldVar
@@ -37,18 +37,18 @@ struct FieldVar {
 The value of the `name_index` item must be a valid index into the `string_pool` table.
 The `string_pool` entry at that index represents the field name.
 
-#### FieldFn
+#### FieldClosure
 ```c
-struct FieldFn {
+struct FieldClosure {
     u2 name_index;
     u2 argc;
     u2 locals;
     u2 block_count;
-    CodeBlock block[block_count];
+    BasicBlock block[block_count];
 };
 ```
 
-The items of the `FieldFn` structure are the following:
+The items of the `FieldClosure` structure are the following:
 
 ##### name_index
 The value of the `name_index` item must be a valid index into the `string_pool` table.
@@ -75,7 +75,7 @@ A block refers to a **Basic Block** of the function's _Control Flow Graph_,
 and it is defined as:
 
 ```c
-struct CodeBlock {
+struct BasicBlock {
     u2 next_block;
     u2 code_length;
     u1 code[code_length];

@@ -88,5 +88,10 @@ The value of the `name_index` item must be a valid index into the `string_pool` 
 The `string_pool` entry at that index represents the field name or type name.
 
 If the name of the field of a `FieldInfo` structure begins with a '<' ('\u003c'),
-then the name must be the special name `<ctor>`, representing a constructor method.
-The return type of such a method must be void.
+then the name must be the special name `<class-init>`, representing a class constructor method.
+The return type of such a method must be `Unit`. (see [Reserved Names](../runtime/reserved_names.md))
+
+If the name of the field of a `FieldInfo` structure is `constructor`, then it must
+be representing a object constructor method.
+The return type of such a method must be `Unit`. (see [Reserved Names](../runtime/reserved_names.md))
+

@@ -25,7 +25,7 @@ const8_5 =
 ```
 
 ### Description
-Push the `int` constant *\<n\>* (-1, 0, 1, 2, 3, 4, 5)
+Push the `Int32` constant *\<n\>* (-1, 0, 1, 2, 3, 4, 5)
 onto the operand stack.
 
 ### Run-time Exceptions

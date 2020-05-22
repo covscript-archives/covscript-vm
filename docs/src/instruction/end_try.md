@@ -1,22 +1,27 @@
-## return_void
+## end_try
 
 ### Operation
-Just return.
+End a try tracer.
 
 ### Format
-| return_void |
+| end_try |
 | :----: |
 
 ### Forms
-return =
+```
+end_try =
+```
 
 ### Operand Stack
 ```
-...->
+... ->
 ...
 ```
 
 ### Description
-Return from current function.
+End a try tracer created by [try](try.md).
 
 ### Run-time Exceptions
+
+### Notes
+

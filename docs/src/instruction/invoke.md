@@ -15,13 +15,13 @@ invoke =
 ### Operand Stack
 ```
 ..., [arg1, [arg2...]], function ->
-..., [result]
+..., result
 ```
 
 ### Description
 Invoke `function` with args (`arg1` .. `argN`).
 
-The `result` is the function return value if and only if the function doesn't return void.
+The `result` is the function return value.
 
 ### Run-time Exceptions
 
