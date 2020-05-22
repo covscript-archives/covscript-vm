@@ -19,4 +19,5 @@ namespace cs {
     using list_t     = std::list<var_t>;
     using pair_t     = std::pair<var_t, var_t>;
     using hash_map_t = cs::map_t<var_t, var_t>;
+    class field;
 }

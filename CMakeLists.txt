@@ -64,9 +64,12 @@ include_directories(include)
 add_executable(covscript ${SRC})
 add_dependencies(covscript compile-rust)
 
+add_executable(test-variable tests/variable.cpp)
+
 target_link_libraries(covscript mpp_core)
 target_link_libraries(covscript mpp_foundation)
 target_link_libraries(covscript mpp_system)
 target_link_libraries(covscript mpp_string)
 target_link_libraries(covscript covscript_compiler)
 target_link_libraries(covscript ${RUST_DEP_SYS_LIBS})
+target_link_libraries(test-variable mpp_core mpp_foundation)
