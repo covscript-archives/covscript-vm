@@ -16,7 +16,7 @@ The `Int32` type is equivalent to `int32_t` in C++ and `i32` in Rust.
 The valid range is `[-2147483648, 2147483467]`.
 
 ## Number
-The `Number` type is equivalent to `double` in C++ and `f64` in Rust.
+The `Number` type is equivalent to `long double` in C++.
 
 ## String
 The `String` type is equivalent to `std::string` in C++.
