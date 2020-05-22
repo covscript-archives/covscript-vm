@@ -32,14 +32,14 @@ namespace cs {
         static void test(X);
 
         template <typename X>
-        static X &declref();
+        static const X &declcref();
 
         template <typename>
         constexpr static bool helper(...) {
             return false;
         }
 
-        template <typename X, typename = decltype(test(declref<X>()))>
+        template <typename X, typename = decltype(test(declcref<X>()))>
         constexpr static bool helper(int = 0) {
             return true;
         }
