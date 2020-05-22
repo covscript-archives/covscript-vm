@@ -25,6 +25,7 @@
     - [field_load](instruction/field_load.md)
     - [field_store](instruction/field_store.md)
     - [if_cmp](instruction/if_cmp.md)
+    - [indirect_assign](instruction/indirect_assign.md)
     - [invoke](instruction/invoke.md)
     - [invoke_ctor](instruction/invoke_ctor.md)
     - [jump](instruction/jump.md)
