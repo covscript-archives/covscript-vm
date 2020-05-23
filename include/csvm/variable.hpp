@@ -255,6 +255,14 @@ namespace cs {
         template <typename T, typename...ArgsT>
         explicit var_t(typeholder<T> holder, ArgsT &&...args) : data(holder, std::forward<ArgsT>(args)...) {}
 
+        var_t &operator=(const var_t &v) {
+            if (&v != this) {
+                data.get_handler()->deallocate(data.sso_hit);
+                data.copy(v.data);
+            }
+            return *this;
+        }
+
         inline const std::type_info &type() const noexcept {
             return data.get_handler()->type();
         }
@@ -267,6 +275,12 @@ namespace cs {
         template <typename T>
         inline const T &get() const {
             return data_store::sso_dispatcher<T>::instantiate(data);
+        }
+
+        template <typename T, typename...ArgsT>
+        void set(ArgsT &&...args) {
+            data.get_handler()->deallocate(data.sso_hit);
+            data_store::sso_dispatcher<T>::store(data, std::forward<ArgsT>(args)...);
         }
     };
 }
